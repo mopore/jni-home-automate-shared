@@ -1,13 +1,13 @@
 ```
-    ███        ▄████████   ▄▄▄▄███▄▄▄▄      ▄███████▄  ▄█          ▄████████     ███        ▄████████ 
-▀█████████▄   ███    ███ ▄██▀▀▀███▀▀▀██▄   ███    ███ ███         ███    ███ ▀█████████▄   ███    ███ 
-   ▀███▀▀██   ███    █▀  ███   ███   ███   ███    ███ ███         ███    ███    ▀███▀▀██   ███    █▀  
-    ███   ▀  ▄███▄▄▄     ███   ███   ███   ███    ███ ███         ███    ███     ███   ▀  ▄███▄▄▄     
-    ███     ▀▀███▀▀▀     ███   ███   ███ ▀█████████▀  ███       ▀███████████     ███     ▀▀███▀▀▀     
-    ███       ███    █▄  ███   ███   ███   ███        ███         ███    ███     ███       ███    █▄  
-    ███       ███    ███ ███   ███   ███   ███        ███▌    ▄   ███    ███     ███       ███    ███ 
-   ▄████▀     ██████████  ▀█   ███   █▀   ▄████▀      █████▄▄██   ███    █▀     ▄████▀     ██████████ 
-                                                      ▀                                               
+   ▄████████    ▄█    █▄       ▄████████    ▄████████    ▄████████ ████████▄  
+  ███    ███   ███    ███     ███    ███   ███    ███   ███    ███ ███   ▀███ 
+  ███    █▀    ███    ███     ███    ███   ███    ███   ███    █▀  ███    ███ 
+  ███         ▄███▄▄▄▄███▄▄   ███    ███  ▄███▄▄▄▄██▀  ▄███▄▄▄     ███    ███ 
+▀███████████ ▀▀███▀▀▀▀███▀  ▀███████████ ▀▀███▀▀▀▀▀   ▀▀███▀▀▀     ███    ███ 
+         ███   ███    ███     ███    ███ ▀███████████   ███    █▄  ███    ███ 
+   ▄█    ███   ███    ███     ███    ███   ███    ███   ███    ███ ███   ▄███ 
+ ▄████████▀    ███    █▀      ███    █▀    ███    ███   ██████████ ████████▀  
+                                           ███    ███                         
 ```
 
 Source for ASCII-fonts: https://www.coolgenerator.com/ascii-text-generator
@@ -15,23 +15,11 @@ Source for ASCII-fonts: https://www.coolgenerator.com/ascii-text-generator
 
 
 # What is this?
-
-This is template for TypeScript project in VS Code with linting.
+This project includes shared types and classes for the JNI Home Automate project and a script to
+push the shared code to the corresponding projects.
 
 # What's the motivation?
-
-To have an easier start for my projects.
-
-# Installation
-Place keys and environment variable values inside a .env file in the project's root folder.
-```
-NAME=value
-```
-
-Just use it as template.
-```
-npm install
-```
+Automated code provisioning by avoid a public npm project.
 
 
 # Update all packages to the latest version
@@ -48,26 +36,16 @@ npm install -g npm-check-updates
 4. Run `npm install` to actually update to the latest versions.
 
 
-
-
 # How to use
+Edit the shared code in `src/shared`.
+Only the "shared" directory and all its subfolders will be pushed.
+Existing shared folders in target projects will be completely remooved.
+Run the script in `./script/push_shared.sh`
 ```
     The code you would write
 ```
 
 # Release History
 
-## v0.4.1
-- Template restrictions removed in linting.
-## v0.4.0
-- NCU guide added to readme.
-- Upgraded to latest versions of TypeScript (4.5.2), Jest (27.4.3) and the rest.
-
-## v0.3.0
-- Upgrade of TypeScript to 4.3
-
-## v0.2.0
-- Support for dotenv
-
-## v0.1.0
+## v1.0.0
 - Initial commit.
