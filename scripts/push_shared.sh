@@ -42,6 +42,9 @@ do
 
 	rm -rf "src/shared"
 	cp -r "$home/src/shared" "src"
+	git add src/shared
+	git commit -m "Update on shared types and classes."
+	git push
 
 	# Switch up to base repos directory
 	cd ..

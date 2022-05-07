@@ -47,5 +47,8 @@ Run the script in `./script/push_shared.sh`
 
 # Release History
 
+## v1.1.0
+- Added git add, commit and push for distributed changes.
+
 ## v1.0.0
 - Initial commit.
