@@ -25,7 +25,6 @@ repos=( \
 	"monitor_neo_sensors"\
 	"control_hue_bridge"\
 	"control_aws_polly"\
-	"control_aws_polly"\
 	"control_home_briefing"\
 )
 
