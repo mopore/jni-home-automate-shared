@@ -47,8 +47,9 @@ Run the script in `./script/push_shared.sh`
 
 # Release History
 
-## v1.2.0 (untagged)
+## v1.2.0
 - Add CommandRegistrar to periodically register available commands to Telegram bot.
+- Set maximum for listeners via MQTT Server connection.
 
 ## v1.1.0
 - Added git add, commit and push for distributed changes.

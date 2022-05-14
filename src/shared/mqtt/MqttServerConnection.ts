@@ -15,6 +15,7 @@ export class MqttServerConnection {
 			console.log("Connected to MQTT server");
 		});	
 
+		this._client.setMaxListeners(15);
 	}
 
 	publish(topic: string, message: string): void{
@@ -39,6 +40,12 @@ export class MqttServerConnection {
 			}
 		}));
 	}
+
+
+	setMaxListeners(limit: number): void {
+		this._client.setMaxListeners(limit)
+	}
+
 
 	exit(): void {
 		this._client.end();
