@@ -47,6 +47,9 @@ Run the script in `./script/push_shared.sh`
 
 # Release History
 
+## v1.3.0 (Untagged)
+- Learning the state of the current MQTT connection.
+
 ## v1.2.0
 - Add CommandRegistrar to periodically register available commands to Telegram bot.
 - Set maximum for listeners via MQTT Server connection.
