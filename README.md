@@ -49,6 +49,7 @@ Run the script in `./script/push_shared.sh`
 
 ## v1.3.0 (Untagged)
 - Learning the state of the current MQTT connection.
+- Removed deprecated 'monitor neo sensors' project.
 
 ## v1.2.0
 - Add CommandRegistrar to periodically register available commands to Telegram bot.
