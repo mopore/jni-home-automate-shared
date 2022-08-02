@@ -1,6 +1,10 @@
 import MQTT, { Client } from "mqtt";
 
+const sleep = async (ms: number): Promise<void> =>{
+	return new Promise( resolve => setTimeout(resolve, ms) );
+}
 
+const THREE_SECS = 3000;
 export class MqttServerConnection {
 
 
@@ -95,11 +99,31 @@ export class MqttServerConnection {
 
 	/**
 	 * This method is used to publish a message to a topic.
-	 * It will throw an error if the client is not connected.
+	 * It will throw an error after 3 seconds if the client is not connected.
 	 * @param topic The topic to publish to
 	 * @param message 
 	 */
 	publish(topic: string, message: string): void{
+		Promise.resolve().then(async () => {
+			// Wait max 3 seconds before subscribing to the topic if not connected.
+			const startTime = Date.now();
+			while (!this._connected){
+				await sleep(100);
+				const timeDiff = Date.now() - startTime;
+				if (timeDiff > THREE_SECS)
+					break
+			}
+			this._publish(topic, message);
+		}).catch(error => {
+			const errorMessage = `Error publishing: ${error}`;
+			console.error(errorMessage);
+			console.trace();
+			throw new Error(errorMessage);
+		});
+	}
+
+
+	private _publish(topic: string, message: string): void{
 		this.checkClientAndConnection();
 		if (this._client)
 			this._client.publish(topic, message);
@@ -108,12 +132,32 @@ export class MqttServerConnection {
 
 	/**
 	 * This method is used to subscribe to a topic.
-	 * It will throw an error if the client is not connected.
+	 * It will throw an error after 3 seconds if the client is not connected.
 	 * @param topic The topic to subscribe to
 	 * @param handler 
 	 */
 	subscribe(topic: string, handler: (message: string, topic?: string) => void): void{
-		// this.checkClientAndConnection();
+		Promise.resolve().then(async () => {
+			// Wait max 3 seconds before subscribing to the topic if not connected.
+			const startTime = Date.now();
+			while (!this._connected){
+				await sleep(100);
+				const timeDiff = Date.now() - startTime;
+				if (timeDiff > THREE_SECS)
+					break
+			}
+			this._subscribe(topic, handler);
+		}).catch(error => {
+			const errorMessage = `Error subscribing: ${error}`;
+			console.error(errorMessage);
+			console.trace();
+			throw new Error(errorMessage);
+		});
+	}
+
+
+	private _subscribe(topic: string, handler: (message: string, topic?: string) => void): void{
+		this.checkClientAndConnection();
 		if (this._client){
 			this._client.subscribe(topic, (error => {
 				if (!error) {
@@ -133,10 +177,6 @@ export class MqttServerConnection {
 					throw new Error(errorMessage);
 				}
 			}));
-		}
-		else {
-			this.checkClientAndConnection();
-			// FIXME: This is a hack to make the subscription work.
 		}
 	}
 
