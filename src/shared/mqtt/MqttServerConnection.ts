@@ -113,7 +113,7 @@ export class MqttServerConnection {
 	 * @param handler 
 	 */
 	subscribe(topic: string, handler: (message: string, topic?: string) => void): void{
-		this.checkClientAndConnection();
+		// this.checkClientAndConnection();
 		if (this._client){
 			this._client.subscribe(topic, (error => {
 				if (!error) {
@@ -133,6 +133,10 @@ export class MqttServerConnection {
 					throw new Error(errorMessage);
 				}
 			}));
+		}
+		else {
+			this.checkClientAndConnection();
+			// FIXME: This is a hack to make the subscription work.
 		}
 	}
 
