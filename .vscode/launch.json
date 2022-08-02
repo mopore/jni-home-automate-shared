@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-node",
+            "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Launch Mqtt Test",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/src/App.ts",
+            "program": "${workspaceFolder}/src/shared/mqtt/MqttTestMain.ts",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ],
