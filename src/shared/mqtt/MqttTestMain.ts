@@ -1,4 +1,4 @@
-import { MqttServerConnection } from "./MqttServerConnection";
+import { MqttServerConnection } from "./MqttServerConnection.js";
 
 type TestType = {
 	name: string;

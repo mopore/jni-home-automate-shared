@@ -1,5 +1,5 @@
-import { MqttServerConnection } from "./mqtt/MqttServerConnection";
-import { ServiceFrame } from "./ServiceFrame";
+import { MqttServerConnection } from "./mqtt/MqttServerConnection.js";
+import { ServiceFrame } from "./ServiceFrame.js";
 
 const EXIT_COMMAND = "exit";
 export class ExitListener {

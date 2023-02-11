@@ -1,7 +1,7 @@
-import { AliveTicker } from "./AliveTicker";
-import { ExitListener } from "./ExitListener";
-import { IService } from "./IService";
-import { MqttServerConnection } from "./mqtt/MqttServerConnection";
+import { AliveTicker } from "./AliveTicker.js";
+import { ExitListener } from "./ExitListener.js";
+import { IService } from "./IService.js";
+import { MqttServerConnection } from "./mqtt/MqttServerConnection.js";
 
 const FIVE_SEC = 5000;
 export class ServiceFrame {

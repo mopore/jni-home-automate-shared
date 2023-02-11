@@ -187,7 +187,6 @@ export class MqttServerConnection {
 	 * @param limit The maximum number of connection losses to tolerate
 	 */
 	setMaxListeners(limit: number): void {
-		this.checkClientAndConnection();
 		if (this._client)
 			this._client.setMaxListeners(limit)
 	}

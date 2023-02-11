@@ -47,6 +47,13 @@ Run the script in `./script/push_shared.sh`
 
 # Release History
 
+## v1.4.0
+- Latest libraries.
+- Switch to NextNode.
+- Replace npm by pnpm.
+- Remove check connection to set MaxListeners.
+- Add Davinci Rest Bridge.
+
 ## v1.3.0
 - Improved error handling and testing for MQTT Helper.
 - Learning the state of the current MQTT connection.

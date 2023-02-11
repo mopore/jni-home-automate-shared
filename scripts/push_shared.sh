@@ -25,6 +25,7 @@ repos=( \
 	"control_hue_bridge"\
 	"control_aws_polly"\
 	"control_home_briefing"\
+	"jni_davinci_local_bridge"\
 )
 
 for repo in "${repos[@]}" 

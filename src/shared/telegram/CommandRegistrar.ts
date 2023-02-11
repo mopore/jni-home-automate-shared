@@ -1,5 +1,5 @@
-import { MqttServerConnection } from "../mqtt/MqttServerConnection";
-import { CommandRegistration } from "../SharedTypes";
+import { MqttServerConnection } from "../mqtt/MqttServerConnection.js";
+import { CommandRegistration } from "../SharedTypes.js";
 
 
 const ONE_SECOND_IN_MILLIS = 1000;

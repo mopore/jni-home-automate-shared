@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
     "target": "es2020",
-    "module": "commonjs",
+    "module": "NodeNext",
     "allowJs": true,
     "sourceMap": true,
     "outDir": "dist",
     "strict": true,
     "strictBindCallApply":true,
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,  
     "skipLibCheck": true, // This should improve preformance.
     "noImplicitOverride": true
   },
   "include": [
-    "./src/**/*", "tests/src/jest.config.js", "./tests/src/**/*", "jest.config.js",
+    "./src/**/*", "./test/**/*", 
   ]
 }

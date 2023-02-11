@@ -1,4 +1,4 @@
-import { MqttServerConnection } from "../mqtt/MqttServerConnection";
+import { MqttServerConnection } from "../mqtt/MqttServerConnection.js";
 
 
 const TOPIC_TELEGRAM_SEND_MESSAGE = "jniHome/services/telegramBot/send";

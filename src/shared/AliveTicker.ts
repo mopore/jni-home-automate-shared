@@ -1,4 +1,4 @@
-import { MqttServerConnection } from "./mqtt/MqttServerConnection";
+import { MqttServerConnection } from "./mqtt/MqttServerConnection.js";
 
 const PULLING_INTERVAL_IN_SECS = 10;
 const ONE_SEC_IN_MS = 1000;
