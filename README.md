@@ -47,6 +47,9 @@ Run the script in `./script/push_shared.sh`
 
 # Release History
 
+## v1.5.0
+- Provide command alternatives for command registration.
+
 ## v1.4.0
 - Latest libraries.
 - Switch to NextNode.
