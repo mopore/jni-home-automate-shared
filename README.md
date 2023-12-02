@@ -47,6 +47,9 @@ Run the script in `./script/push_shared.sh`
 
 # Release History
 
+## v1.5.1
+- Enhance exception handling when ending MQTT connection.
+
 ## v1.5.0
 - Provide command alternatives for command registration.
 
