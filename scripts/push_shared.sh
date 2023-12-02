@@ -43,11 +43,13 @@ do
 	rm -rf "src/shared"
 	cp -r "$home/src/shared" "src"
 	git add src/shared
-	git commit -m "Update on shared types and classes."
-	git push
+	if git commit -m "Update on shared types and classes." ; then
+		git push
+	fi
 
 	# Switch up to base repos directory
 	cd ..
+	echo "$repo updated."
 done
 
 echo "All done."
