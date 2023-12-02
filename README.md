@@ -47,6 +47,9 @@ Run the script in `./script/push_shared.sh`
 
 # Release History
 
+## v1.6.2
+- Ommit Exceptions on publish and subscribe when exit requested.
+
 ## v1.6.1
 - Make Aliveticker resilient against exceptions.
 
