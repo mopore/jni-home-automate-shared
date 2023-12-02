@@ -47,6 +47,9 @@ Run the script in `./script/push_shared.sh`
 
 # Release History
 
+## v1.6.0
+- Introduce init and reset events to services.
+
 ## v1.5.1
 - Enhance exception handling when ending MQTT connection.
 
