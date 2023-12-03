@@ -48,6 +48,7 @@ Run the script in `./script/push_shared.sh`
 # Release History
 
 ## v1.7.0 (Untagged)
+- Refactor and document initFrame method.
 - Enhance error handling on exit and reset.
 
 ## v1.6.2
