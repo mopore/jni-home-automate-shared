@@ -1,3 +1,4 @@
+import { ServiceFrame } from "./ServiceFrame.js";
 import { MqttServerConnection } from "./mqtt/MqttServerConnection.js";
 
 const PULLING_INTERVAL_IN_SECS = 10;
@@ -8,9 +9,10 @@ export class AliveTicker {
 	private _keepAlive = true;
 	private _secCounter = 10;
 	private _topicName: string;
+	private _failedAliveTicks = 0;
 
 	constructor(
-		private _mqttConnection: MqttServerConnection,
+		private _frame: ServiceFrame,
 		serviceName: string,
 	){
 		console.info(`Setting up Aliveticker for ${serviceName}`);
@@ -21,8 +23,22 @@ export class AliveTicker {
 
 	private async tick(): Promise<void>{
 		if (this._keepAlive && this._secCounter === PULLING_INTERVAL_IN_SECS){
-			this.sendAliveMessage();
-			this._secCounter = 0;
+			try {
+				this._secCounter = 0;
+				await this._frame.mqttConnection.publishAsync(this._topicName, "ALIVE");
+				this._failedAliveTicks = 0;
+			}
+			catch (error){
+				this._failedAliveTicks++;
+				const msg = `Error sending alive tick (${this,this._failedAliveTicks} times): ${error}`;
+				console.error(msg);
+				if (this._failedAliveTicks > 2){
+					const errMessage = "Requesting reset after alive tick failed 3 times.";
+					console.error(errMessage);
+					console.trace();
+					this._frame.reset();
+				}
+			}
 		}
 		if (this._keepAlive){
 			setTimeout(this.tick.bind(this), ONE_SEC_IN_MS);
@@ -33,20 +49,8 @@ export class AliveTicker {
 
 	exit(): void{
 		this._keepAlive = false;
-		this._mqttConnection.publishAsync(this._topicName, "DEAD").catch(error => {
+		this._frame.mqttConnection.publishAsync(this._topicName, "DEAD").catch(error => {
 			console.error(`Error sending dead tick: ${error}`);
 		});
-	}
-
-
-	private sendAliveMessage(): void{
-		try{
-			if (this._keepAlive) {
-				this._mqttConnection.publishAsync(this._topicName, "ALIVE");
-			}
-		}
-		catch(error){
-			console.error(`Error sending alive tick: ${error}`);
-		}
 	}
 }

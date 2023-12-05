@@ -1,6 +1,26 @@
-import dotenv from "dotenv";
+import { IService } from "./shared/IService.js";
+import { ServiceFrame } from "./shared/ServiceFrame.js";
 
-dotenv.config();
-const testEnvValue = process.env["TEST_VAR"] ?? "Define 'TEST_VAR' in .env file in project's root";
+const sampleService: IService = {
+	getServiceName(): string {
+		return "SampleService";
+	},
+	init(frame: ServiceFrame): void {
+		console.log(`Initializing service "${this.getServiceName()}"...`);
+	},
+	onExit(): void {
+		console.log(`Exiting service "${this.getServiceName()}"...`);
+	},
+	onReset(): void {
+		console.log(`Resetting service "${this.getServiceName()}"...`);
+	}
+}
 
-console.log(`Hello from the Template. Test value: ${testEnvValue}`);
+const main = async (): Promise<void> => {
+	const mqttServerUrl = "mqtt://localhost:1883";
+	const frame = new ServiceFrame(mqttServerUrl);
+
+	await frame.initFrameAsync(sampleService);
+}
+
+await main();
