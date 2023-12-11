@@ -36,7 +36,7 @@ do
 		cd "$repo"
 	else
 		echo "Repo '${repo}' does not exist and will be cloned."
-		git clone "https://github.com/mopore/${repo}.git"
+		git clone "git@github.com:mopore/${repo}.git"
 		cd "$repo"
 	fi
 
