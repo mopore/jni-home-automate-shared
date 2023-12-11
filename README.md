@@ -21,6 +21,16 @@ push the shared code to the corresponding projects.
 # What's the motivation?
 Automated code provisioning by avoid a public npm project.
 
+# Dependencies
+
+## Telegram Service
+To use `shared/telegram/TelegramMessenger` the control Telegram service must be running and provide
+the MQTT topic `jniHome/services/telegramBot/send`.
+
+## Alert Messages
+To be able to send alerts the contol Home Briefing service must run and provide a topic
+ `jniHome/services/briefing/alert`.
+
 
 # Update all packages to the latest version
 
@@ -52,6 +62,7 @@ Run the script in `./script/push_shared.sh`
 - Wait up to 20 minutes for MQTT connection on init.
 - Refactor and document initFrame method.
 - Enhance error handling on exit and reset.
+- Add optional pattern.
 
 ## v1.6.2
 - Ommit Exceptions on publish and subscribe when exit requested.
