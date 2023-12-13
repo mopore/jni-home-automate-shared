@@ -1,11 +1,13 @@
 import { IService } from "./shared/IService.js";
 import { ServiceFrame } from "./shared/ServiceFrame.js";
 
+const LOCAL_MQTT_BROKER = "mqtt://localhost:1883";
+
 const sampleService: IService = {
 	getServiceName(): string {
 		return "SampleService";
 	},
-	init(frame: ServiceFrame): void {
+	init(_: ServiceFrame): void {
 		console.log(`Initializing service "${this.getServiceName()}"...`);
 	},
 	onExit(): void {
@@ -16,11 +18,5 @@ const sampleService: IService = {
 	}
 }
 
-const main = async (): Promise<void> => {
-	const mqttServerUrl = "mqtt://localhost:1883";
-	const frame = new ServiceFrame(mqttServerUrl);
-
-	await frame.initFrameAsync(sampleService);
-}
-
-await main();
+const frame = new ServiceFrame(LOCAL_MQTT_BROKER);
+await frame.initFrameAsync(sampleService);
