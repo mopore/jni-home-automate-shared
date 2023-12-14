@@ -17,7 +17,7 @@ export class AliveTicker {
 		console.info(`Setting up Aliveticker for ${serviceName}`);
 		this._topicName = `jniHome/services/${serviceName}/aliveTick`;
 		const greeting = `Alive Ticker for "${serviceName}" will publish an alive tick every ` +
-			`${PULLING_INTERVAL_IN_SECS} seconds. It will reset the service after 3 failed ticks.`;
+			`${PULLING_INTERVAL_IN_SECS} seconds. Using 3-fail-policy.`;
 		console.log(greeting);
 		setTimeout(this.tick.bind(this), ONE_SEC_IN_MS);
 	}

@@ -49,7 +49,8 @@ export class ServiceFrame {
 		this._service = service;
 		this._ticker = new AliveTicker(this, service.getServiceName());
 		new ExitResetListener(this._mqttConnection, service.getServiceName(), this);
-		this._service.init(this);
+		await this._service.initAsync(this);
+		console.log(`Service "${this._service.getServiceName()}" initialized.`);
 	}
 
 
@@ -83,7 +84,7 @@ export class ServiceFrame {
 	private endServiceInFiveSeconds(): void {
 		this._mqttConnection.exit();
 		if (this._service){
-			console.error(`Will exit the process for service "${this._service.getServiceName()}"`);	
+			console.error(`Will exit the process for service "${this._service.getServiceName()}" NOW!!!`);	
 		}
         process.exit();
     }
