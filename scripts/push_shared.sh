@@ -21,7 +21,7 @@ repos=( \
 	"handle_home_events"\
 	"control_jni_home_telegram_bot"\
 	"monitor_jni_iphone"\
-	"monitor_jni_quieter_2_service"\
+	"monitor_jni_home_services"\
 	"control_hue_bridge"\
 	"control_aws_polly"\
 	"control_home_briefing"\
