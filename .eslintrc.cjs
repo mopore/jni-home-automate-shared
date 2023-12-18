@@ -26,7 +26,7 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
-        "no-unused-vars": "off",
+        "no-unused-vars": ["error", { "vars": "local", "args": "none", "varsIgnorePattern": "^[A-Z]"}],
         "@typescript-eslint/explicit-member-accessibility": "off",
         "@typescript-eslint/explicit-function-return-type": "warn",
         "@typescript-eslint/indent": "off",
