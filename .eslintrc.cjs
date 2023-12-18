@@ -38,5 +38,6 @@ module.exports = {
         "@typescript-eslint/consistent-type-assertions": "warn",
         "@typescript-eslint/restrict-template-expressions": "off",
         "@typescript-eslint/no-floating-promises": "error",
+        "@typescript-eslint/prefer-as-const": "off",
     }
 }

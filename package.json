@@ -1,6 +1,6 @@
 {
   "name": "jni-home-automate-shared",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "description": "Shared types and classes for JNI Home Automation.",
   "main": "App.ts",
   "type": "module",
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "mocha dist/test/**/*.js --recursive --exit",
-    "build": "rm -rf ./dist && tsc -b"
+    "build": "rm -rf ./dist && tsc -b && npx eslint ."
   },
   "keywords": [
     "template",
@@ -19,18 +19,18 @@
   "author": "jni@mopore.org",
   "license": "ISC",
   "devDependencies": {
-    "@types/chai": "^4.3.4",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "^18.13.0",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
-    "chai": "^4.3.7",
-    "eslint": "^8.34.0",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "chai": "^4.3.10",
+    "eslint": "^8.56.0",
     "mocha": "^10.2.0",
-    "typescript": "^4.9.5"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "mqtt": "^4.3.7"
+    "dotenv": "^16.3.1",
+    "mqtt": "^5.3.3"
   }
 }

@@ -7,8 +7,9 @@ const sampleService: IService = {
 	getServiceName(): string {
 		return "SampleService";
 	},
-	async initAsync(_: ServiceFrame): Promise<void> {
+	initAsync(): Promise<void> {
 		console.log(`Initializing service "${this.getServiceName()}"...`);
+		return Promise.resolve();
 	},
 	onExit(): void {
 		console.log(`Exiting service "${this.getServiceName()}"...`);
