@@ -39,5 +39,10 @@ module.exports = {
         "@typescript-eslint/restrict-template-expressions": "off",
         "@typescript-eslint/no-floating-promises": "error",
         "@typescript-eslint/prefer-as-const": "off",
+        "@typescript-eslint/prefer-readonly": "warn",
+        "@typescript-eslint/ban-types": "warn",
+        "@typescript-eslint/prefer-readonly": "warn",
+        "@typescript-eslint/no-use-before-define": "warn",
+        "@typescript-eslint/no-unused-expressions": "warn",
     }
 }
