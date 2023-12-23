@@ -63,6 +63,7 @@ Run the script in `./script/push_shared.sh`
 - Refactor and document initFrame method.
 - Enhance error handling on exit and reset.
 - Add optional pattern.
+- Add enums functions.
 - Typescript 5.3
 - Updated dependencies
 - Tougher linting rules
