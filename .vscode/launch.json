@@ -11,6 +11,10 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
+            "console": "integratedTerminal",
+            "env": {
+                "LOG_SETUP":"dev",
+            },
             "program": "${workspaceFolder}/src/shared/mqtt/MqttTestMain.ts",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
@@ -24,6 +28,10 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Sample Service",
+            "console": "integratedTerminal",
+            "env": {
+                "LOG_SETUP":"dev",
+            },
             "skipFiles": [
                 "<node_internals>/**"
             ],

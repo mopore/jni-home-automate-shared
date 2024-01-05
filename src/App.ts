@@ -1,5 +1,6 @@
 import { IService } from "./shared/IService.js";
 import { ServiceFrame } from "./shared/ServiceFrame.js";
+import { log } from "./shared/logger/log.js";
 
 const LOCAL_MQTT_BROKER = "mqtt://localhost:1883";
 
@@ -8,14 +9,14 @@ const sampleService: IService = {
 		return "SampleService";
 	},
 	initAsync(): Promise<void> {
-		console.log(`Initializing service "${this.getServiceName()}"...`);
+		log.info(`Initializing service "${this.getServiceName()}"...`);
 		return Promise.resolve();
 	},
 	onExit(): void {
-		console.log(`Exiting service "${this.getServiceName()}"...`);
+		log.info(`Exiting service "${this.getServiceName()}"...`);
 	},
 	onReset(): void {
-		console.log(`Resetting service "${this.getServiceName()}"...`);
+		log.info(`Resetting service "${this.getServiceName()}"...`);
 	}
 }
 

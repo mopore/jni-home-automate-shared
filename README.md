@@ -66,6 +66,7 @@ Run the script in `./script/push_shared.sh`
 - Add optional pattern.
 - Add enums functions.
 - Typescript 5.3
+- Introduce winston logging.
 - Updated dependencies
 - Tougher linting rules
 
