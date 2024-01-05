@@ -188,10 +188,11 @@ export class ServiceFrame {
 				throw new Error(errMessage);
 			}
 			try{
-				console.log(`Alerting reset reason after reset for service "${serviceName}"`);
+				const msg = `Alerting reset reasion after reset for service "${serviceName}": ${reason}`;
+				console.log(msg);
 				await this.alertAsync(
 					`${serviceName} Reset`,
-					`Service "${serviceName}" was reset for reason: ${reason}`,
+					`Service "${serviceName}" was reset due to: ${reason}`,
 					true,
 				);
 				this._resetReason = undefined;
