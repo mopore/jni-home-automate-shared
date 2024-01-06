@@ -1,4 +1,0 @@
-[90m2024-01-05 15:12:50[39m [31merror[39m: Connection loss No. 1
-[90m2024-01-05 15:12:50[39m [31merror[39m: Connection to MQTT server lost!
-[90m2024-01-05 15:13:01[39m [31merror[39m: Error publishing: Error: Client not available for 3 seconds.
-[90m2024-01-05 15:13:01[39m [31merror[39m: Error sending alive tick (1 times): Error: Error publishing: Error: Client not available for 3 seconds.
