@@ -63,6 +63,7 @@ Run the script in `./script/push_shared.sh`
 - Refactor and document initFrame method.
 - Enhance error handling on exit and reset.
 - Better error message on startup of MQTT Server Connection #2.
+- Add ActionSource and Command topics for Hue Bridge.
 - Add optional pattern.
 - Add enums functions.
 - Typescript 5.3
