@@ -58,6 +58,7 @@ Run the script in `./script/push_shared.sh`
 # Release History
 
 ## v2.0.0 (Untagged)
+- Rename "Hue Bridge" to "Halo" #48
 - Provice reset strategies for Alive ticker and Telegram MQTT messenger.
 - Wait up to 20 minutes for MQTT connection on init.
 - Refactor and document initFrame method.
