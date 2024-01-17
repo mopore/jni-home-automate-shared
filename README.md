@@ -63,6 +63,7 @@ Run the script in `./script/push_shared.sh`
 - Wait up to 20 minutes for MQTT connection on init.
 - Refactor and document initFrame method.
 - Enhance error handling on exit and reset.
+- Provide a function with a managed call.
 - Better error message on startup of MQTT Server Connection #2.
 - Add ActionSource and Command topics for Hue Bridge.
 - Add optional pattern.
