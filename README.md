@@ -65,6 +65,7 @@ Run the script in `./script/push_shared.sh`
 - Enhance error handling on exit and reset.
 - Provide a function with a managed call.
 - Better error message on startup of MQTT Server Connection #2.
+- Add pan topics to shared topics.
 - Add ActionSource and Command topics for Hue Bridge.
 - Add optional pattern.
 - Add enums functions.
