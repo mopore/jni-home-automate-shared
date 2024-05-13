@@ -69,6 +69,7 @@ Run the script in `./script/push_shared.sh`
 - Add ActionSource and Command topics for Hue Bridge.
 - Add optional pattern.
 - Add enums functions.
+- Add JSON Reviver (for Dates)
 - Typescript 5.3
 - Introduce winston logging.
 - Updated dependencies
