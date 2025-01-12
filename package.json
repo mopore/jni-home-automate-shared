@@ -19,19 +19,19 @@
   "author": "jni@mopore.org",
   "license": "ISC",
   "devDependencies": {
-    "@types/chai": "^4.3.11",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.10.6",
-    "@typescript-eslint/eslint-plugin": "^6.17.0",
-    "@typescript-eslint/parser": "^6.17.0",
-    "chai": "^5.0.0",
-    "eslint": "^8.56.0",
-    "mocha": "^10.2.0",
-    "typescript": "^5.3.3"
+    "@types/chai": "^5.0.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.5",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "chai": "^5.1.2",
+    "eslint": "^9.18.0",
+    "mocha": "^11.0.1",
+    "typescript": "^5.7.3"
   },
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "mqtt": "^5.3.4",
-    "winston": "^3.11.0"
+    "dotenv": "^16.4.7",
+    "mqtt": "^5.10.3",
+    "winston": "^3.17.0"
   }
 }
